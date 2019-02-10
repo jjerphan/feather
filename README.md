@@ -1,4 +1,4 @@
-#Martin theme for Pelican static site generator
+# Martin theme for Pelican static site generator
 
 This is a port of the Martin theme by Allison House to work with the [Pelican static site generator](http://blog.getpelican.com/)
 
@@ -8,7 +8,7 @@ It supports the the following plugins or variables
 - global variable GOOGLE_ANALYTICS for your Google Analytics ID.
 - [font awesome](http://fortawesome.github.io/Font-Awesome/) for social and share links specified by global variables and the name of the font awesome icon after "fa-".
 e.g.:
-```
+```python
 # Social widget
 SOCIAL = (('github', 'http://github.com/username),
           ('twitter', 'http://twitter.com/username),
@@ -20,7 +20,7 @@ SHARE = (('twitter', 'http://twitter.com/share', '?text=', '&amp;url='),
 ```
 
 - [Disqus](http://www.disqus.com) integration setting the variable
-```
+```python
 DISQUS_SITENAME = "your_site_name"
 ```
 
