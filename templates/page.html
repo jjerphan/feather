@@ -1,17 +1,26 @@
 {% extends "base.html" %}
 {% block title %}{{ page.title }}{%endblock%}
+
+{% block header %}
+<hgroup>
+  <div class="banner-container">
+  </div>
+  <h1>{{ page.title }}</h1>
+</hgroup>
+<div class="translations">
+	{% import 'translations.html' as translations with context %}
+	{{ translations.translations_for(page) }}
+</div>
+{% endblock %}
+
 {% block content %}
 <section>
-    <h1>{{ page.title }}</h1>
-    {% import 'translations.html' as translations with context %}
-    {{ translations.translations_for(page) }}
-
     {{ page.content }}
 
 	{% if page.modified %}
-		<p>
-		Last updated: {{ page.locale_modified }}
-		</p>
-		{% endif %}
+	<p>
+	<!-- {{ LAST_MODIFIED_PLACEHOLDER }} {{ page.locale_modified }} -->
+	</p>
+	{% endif %}
 </section>
 {% endblock %}

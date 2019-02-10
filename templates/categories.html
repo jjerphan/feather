@@ -1,13 +1,24 @@
 {% extends "base.html" %}
-{% block title %}{{ SITENAME }} - Categories{% endblock %}
+{% block title %}{{ SITENAME }} - {{ CATEGORIES_PLACEHOLDER }} {% endblock %}
+
+{% block header %}
+<hgroup>
+  <h1>{{ CATEGORIES_PLACEHOLDER }}</h1>
+</hgroup>
+
+{% endblock %}
+
 
 {% block content %}
 <section>
-    <h1>Categories in {{ SITENAME }}</h1>
-<ul>
-    {%- for category, articles in categories|sort %}
-        <li><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a> ({{ articles|count }})</li>
-    {% endfor %}
-</ul>
+  <ul>
+  {%- for category, articles in categories|sort %}
+      <li>
+        <h3>
+          <a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a> ({{ articles|count }})
+        </h3>
+      </li>
+  {% endfor %}
+  </ul>
 </section>
 {% endblock %}
